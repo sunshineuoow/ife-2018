@@ -1,0 +1,47 @@
+<template>
+  <div>
+    <header>
+      <input type="text" placeholder="姓名（string）" value="{= name =}">
+      <input type="text" pattern="[0-9]*" placeholder="年龄（number）" value="{= age =}">
+      <input type="text" placeholder="简介（string）" value="{= des =}">
+    </header>
+    <section>
+      <p>
+        信息：
+        <button on-click="handleRemove">移除信息</button>
+      </p>
+      <ul>
+        <li>姓名：{{name}}</li>
+        <li>年龄：{{age}}</li>
+        <li>简介：{{des}}</li>
+      </ul>
+    </section>
+  </div>
+</template>
+
+<script>
+  import { DataTypes } from 'san'
+  export default {
+    dataTypes: {
+      name: DataTypes.string,
+      age: DataTypes.number,
+      des: DataTypes.string
+    },
+    initData() {
+      return {
+        name: undefined,
+        age: undefined,
+        des: undefined
+      }
+    },
+    handleRemove() {
+      this.data.set('name', undefined)
+      this.data.set('age', undefined)
+      this.data.set('des', undefined)
+    }
+  }
+</script>
+
+<style>
+
+</style>

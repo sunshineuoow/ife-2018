@@ -1,9 +1,16 @@
 <template>
-  <div class="hello">hello {{msg}}</div>
+  <div>
+    <div class="hello">hello {{msg}}</div>
+    <router-link to="/demo01">2.1数据操作</router-link>
+  </div>
 </template>
 
 <script>
+  import { Link } from 'san-router'
   export default {
+    components: {
+      'router-link': Link
+    },
     initData() {
       return {
         msg: 'world'
